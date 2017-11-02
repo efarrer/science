@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+cd $(dirname "$0")
+
+~/google-cloud-sdk/bin/gcloud app deploy
+~/google-cloud-sdk/bin/gcloud app browse

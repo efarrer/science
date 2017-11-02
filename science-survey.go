@@ -12,5 +12,5 @@ func init() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Thanks for being willing to help with my science project by taking this survey!")
+	fmt.Fprintf(w, "Thanks for being willing to help with my science project by taking this survey! (%s)", VERSION)
 }
