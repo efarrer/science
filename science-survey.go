@@ -2,10 +2,15 @@ package science
 
 import (
 	"fmt"
+	"math/rand"
 	"net/http"
+	"time"
 )
 
 const VERSION = "0.1"
+
+const SURVEY1 = "https://www.google.com"
+const SURVEY2 = "https://www.cnn.com"
 
 const PAGE = `
 <html>
@@ -48,7 +53,7 @@ const PAGE = `
       <tr>
         <td style="padding-top:5%%">
           <center>
-            <a href="#" class="button">Begin Survey</a>
+            <a href="/survey" class="button">Begin Survey</a>
           </center>
         </td>
       </tr>
@@ -58,9 +63,22 @@ const PAGE = `
 `
 
 func init() {
-	http.HandleFunc("/", handler)
+	rand.Seed(time.Now().UnixNano())
+	http.HandleFunc("/", mainHandler)
+	http.HandleFunc("/survey", surveyHandler)
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func surveyHandler(w http.ResponseWriter, r *http.Request) {
+	val := rand.Int() % 2
+	if val == 0 {
+		http.Redirect(w, r, SURVEY1, http.StatusFound)
+	} else if val == 1 {
+		http.Redirect(w, r, SURVEY2, http.StatusFound)
+	} else {
+		panic("Random is broken")
+	}
+}
+
+func mainHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, PAGE, VERSION)
 }
