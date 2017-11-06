@@ -9,8 +9,9 @@ import (
 
 const VERSION = "0.1"
 
-const SURVEY1 = "https://www.google.com"
-const SURVEY2 = "https://www.cnn.com"
+const BASE = "https://docs.google.com/forms/"
+const SURVEY_POLITICAL = "d/e/1FAIpQLSfIc4B4XN5J06S3sT4pd-Ylehs1Ki75u9kYF3VlrHZaXYazvA/viewform"
+const SURVEY_RELIGIOUS = "d/16a06KXHYdNjY9POJQ2hwL56t7rR4IYr0ce6fGUbuT6Q/viewform"
 
 const PAGE = `
 <html>
@@ -71,9 +72,9 @@ func init() {
 func surveyHandler(w http.ResponseWriter, r *http.Request) {
 	val := rand.Int() % 2
 	if val == 0 {
-		http.Redirect(w, r, SURVEY1, http.StatusFound)
+		http.Redirect(w, r, BASE+SURVEY_POLITICAL, http.StatusFound)
 	} else if val == 1 {
-		http.Redirect(w, r, SURVEY2, http.StatusFound)
+		http.Redirect(w, r, BASE+SURVEY_RELIGIOUS, http.StatusFound)
 	} else {
 		panic("Random is broken")
 	}
