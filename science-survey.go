@@ -45,9 +45,10 @@ const PAGE = `
         <td class="intro">
           <center>
             Hi my name is Eli Farrer, and thank you for taking this survey. It will take about 1
-            minute and it will really help me with my science fair project. Please do not discuss any part of the
-            survey with anyone else to keep the survey unbiased. If you can please ask others to
-            also take the survey, I would appreciate it. The more people I get the better my data will be.
+			minute and it will really help me with my school project. Please do not discuss any part
+			of the survey with anyone else to keep the survey unbiased. If you can please ask others
+			to also take the survey, I would appreciate it. The more people I get the better my data
+			will be.
             </center>
         </td>
       </tr>
