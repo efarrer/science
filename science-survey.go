@@ -9,9 +9,9 @@ import (
 
 const VERSION = "0.1"
 
-const BASE = "https://docs.google.com/forms/"
-const SURVEY_POLITICAL = "d/e/1FAIpQLSfIc4B4XN5J06S3sT4pd-Ylehs1Ki75u9kYF3VlrHZaXYazvA/viewform"
-const SURVEY_RELIGIOUS = "d/16a06KXHYdNjY9POJQ2hwL56t7rR4IYr0ce6fGUbuT6Q/viewform"
+const BASE = "https://goo.gl/forms/"
+const SURVEY_POLITICAL = "ShR4QgWulvrUS6fy1"
+const SURVEY_RELIGIOUS = "hypFL79cZcwWJ6V33"
 
 const PAGE = `
 <html>
